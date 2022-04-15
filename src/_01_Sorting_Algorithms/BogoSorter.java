@@ -21,15 +21,16 @@ public class BogoSorter extends Sorter {
 	void sort(int[] array, SortingVisualizer display) {
 		Random rand = new Random();
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array.length - 1; j++) {
-				if (array[j] > array[j + 1]) {
-					int a = rand.nextInt(array.length);
-					int b = rand.nextInt(array.length);
-					int c = array[a];
-					array[a] = array[b];
-					array[b] = c;
-				}
+			if (array[i] > array[i + 1]) {
+				int a = rand.nextInt(array.length);
+				int b = rand.nextInt(array.length);
+				int c = array[a];
+				array[a] = array[b];
+				array[b] = array[a];
+				display.updateDisplay();
+				i = 0;
 			}
+
 		}
 	}
 }
