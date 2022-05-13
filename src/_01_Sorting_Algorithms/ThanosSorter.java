@@ -44,7 +44,7 @@ public class ThanosSorter extends Sorter {
 		Random rand = new Random();
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length - 1; j++) {
-				if (arr[j] > arr[j + 1]) {
+				if (arr[j] > arr[j + 1] && arr[j+1] != 0) {
 					for (int g = 0; g < (arr.length) / 2; g++) {
 						arr[j] = 0;
 						display.updateDisplay();
