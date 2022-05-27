@@ -73,5 +73,78 @@ public class Algorithms {
 		}
 		return height;
 	}
-	
+
+	public static Object findLongestWord(List<String> words) {
+		// TODO Auto-generated method stub
+		String wordle = "";
+		for (int i = 0; i < words.size(); i++) {
+			if (words.get(i).length()>wordle.length()) {
+				wordle = words.get(i);
+			}
+		}
+		return wordle;
+	}
+
+	public static Object containsSOS(List<String> message1) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < message1.size(); i++) {
+			if (message1.contains("... --- ...")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return null;
+	}
+
+	public static List<Double> sortScores(List<Double> results) {
+		// TODO Auto-generated method stub
+		double a = 0;
+		double b = 0;
+		for (int i = 0; i < results.size(); i++) {
+			for (int j = 0; j < results.size()-1; j++) {
+				if (results.get(j) > results.get(j+1) ) {
+					a = results.get(j);
+					results.set(j, results.get(j+1));
+					results.set(j+1, a);
+				}
+			}
+		}
+		return results;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		String a = "";
+		String b = "";
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			for (int j = 0; j < unsortedSequences.size()-1; j++) {
+				if (unsortedSequences.get(j).length() > unsortedSequences.get(j+1).length() ) {
+					a = unsortedSequences.get(j);
+					unsortedSequences.set(j, unsortedSequences.get(j+1));
+					unsortedSequences.set(j+1, a);
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		String a = "";
+		String b = "";
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = 0; j < words.size(); j++) {
+				if (words.get(j).compareTo(words.get(j+1)) > 0) {
+					if (words.get(j).length() > words.get(j+1).length() ) {
+						a = words.get(j);
+						words.set(j, words.get(j+1));
+						words.set(j+1, a);
+				}
+			}
+		}
+	}
+		return words;
+	}	
 }
