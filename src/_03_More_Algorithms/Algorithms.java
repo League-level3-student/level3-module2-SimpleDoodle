@@ -135,13 +135,11 @@ public class Algorithms {
 		String a = "";
 		String b = "";
 		for (int i = 0; i < words.size(); i++) {
-			for (int j = 0; j < words.size(); j++) {
+			for (int j = 0; j < words.size()-1; j++) {
 				if (words.get(j).compareTo(words.get(j+1)) > 0) {
-					if (words.get(j).length() > words.get(j+1).length() ) {
 						a = words.get(j);
 						words.set(j, words.get(j+1));
 						words.set(j+1, a);
-				}
 			}
 		}
 	}
