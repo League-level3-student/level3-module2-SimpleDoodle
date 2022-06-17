@@ -22,18 +22,22 @@ public class _02_JavaClassSearchSort {
 
     public static Boolean arraySearch(char[] arr, char key) {
     	Arrays.sort(arr);
-        int search = Arrays.binarySearch(arr, key);
         for (int i = 0; i < arr.length; i++) {
-			
+			if (arr[i] == key) {
+				return true;
+			}
 		}
-        if () {
-			
-		}
-        return search;
+
+        return false;
     }
     
     public static Boolean listSearch(List<Character> list, Character key) {
-        
-        return null;
+        Collections.sort(list);
+        for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals(key)) {
+				return true;
+			}
+		}
+        return false;
     }
 }
